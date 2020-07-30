@@ -66,4 +66,9 @@ export const radioPlayerInit = () => {
 
     audio.volume = 0.3;
     radioVolume.value = 30; 
+
+    radioPlayerInit.stop = () => {
+        changeIconPlay();
+        audio.pause();
+    }
 };

@@ -108,5 +108,12 @@ export const musicPlayerInit = () => {
           });
           audioPlayer.volume = 0.25;
 
-          
+          musicPlayerInit.stop = () => {
+              if(!audioPlayer.paused){
+                  audioPlayer.pause();
+                  audio.classList.remove('play');
+                  audioButtonPlay.classList.remove('fa-pause');
+                  audioButtonPlay.classList.add('fa-play');
+              }
+          }
 };

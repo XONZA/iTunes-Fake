@@ -81,9 +81,15 @@ export const videoPlayerInit = () => {
     videoPlayer.addEventListener('fullscreenchange', () => {
         videoVolume.value = videoPlayer.volume * 100;
         console.log(videoPlayer.volume);
-    })
+    });
 
     videoVolume.addEventListener('input', () => {
         videoPlayer.volume = videoVolume.value / 100;
-    })
+    });
+
+    videoPlayerInit.stop = () => {
+        if (!videoPlayer.paused){
+            stopPlay();
+        }
+    };
 }
